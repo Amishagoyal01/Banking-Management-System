@@ -17,26 +17,25 @@ def home_page():
 def existing_user():
     f=int(input("enter your account number"))
     print("Your account number is:",f)
-    for i in a:
-        if i==f:
-            print(i,a[i])
+    if f in a:
+            print(f,a[f])
             main_page()
 
     
 def new_user():
     g=input("Please enter your name")
-    b=int(input("Please enter the PIN you want to create"))
-    print("Your PIN has been successful generated:",b)
+    phonenumber=int(input("Please enter your phone number"))
     import random
     x = random.randint(100,200)  # Random 3 digit account number
     print("Your account number has been generated successfully:",x)
     print("Please remember your account number for future use.")
+    b=random.randint(100,200)
+    print("Your PIN has been successful generated:",b)
     balance= 0
     a[x]={"name":g,"Balance":balance,"PIN":b}
-    for i in a:
-        if i==x:
-            print(i,a[i])
-            main_page()
+    if x in a:
+        print(x,a[x])
+        main_page()
                 
 
 def  main_page():
